@@ -290,7 +290,7 @@ func findDuplicates(t objectfile.Type, slice []*objectfile.GeometryValue, epsilo
 		}
 		mResults.Unlock()
 	}
-
+	// ToDo: Optimize this O(n^2) implementation
 	processSlice := func(substart, subend int, fullslice []*objectfile.GeometryValue, subwg *sync.WaitGroup) {
 		innerResults := make(replacerList, 0)
 		var value *objectfile.GeometryValue
